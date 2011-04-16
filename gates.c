@@ -1,7 +1,5 @@
 /**********************
-#  last updated:02/15/09
-#
-#  Aimen Al-Refai
+#  Zhongpeng Lin
 #  method definitions
 ************************/
 
