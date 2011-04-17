@@ -1,7 +1,5 @@
 /*********************
-# 01/25/09
-#
-# Aimen Al-Refai
+# Zhongpeng Lin
 # driver 
 *********************/
 
@@ -14,59 +12,151 @@ int main(void){
 
 	/* Greeting */
 	printf("###########################################");
-	printf("\nWelcome to Aimen Al-Refai's GateDriver!!\n");
+	printf("\nWelcome to Zhongpeng Lin's GateDriver!!\n");
 	printf("###########################################\n\n\n");  
 	
 	/*these arrays have no NUL character, as they are not char strings, but bit strings*/
-	char A[32] = "00000000000000001111111111111110";  
-	char B[32] = "00000000000000000000000000000011";
-	char D[32] = "00000000000000001111111111111110";
-	char E[32] = "00000000000000000000000000000011";
+	char A[32] = "00000010000000001111111111111110";
+	char B[32] = "00000010000000000000000000000011";
+	char D[32] = "00000010000000001111111111111110";
+	char E[32] = "00000010000000000000000000000011";
+	char F[32] = "01001010000100000010000111110000";
+	char G[32] = "10100010000111111111100000000000";
+	char H[32] = "10000010110000000011000111111000";
+	char I[32] = "10111110000111100001100000000111";
 	char C[32] = "00000000000000000000000000000000";
-	char F[32] = "00000000000000000000000000000000";
 
+	C[0] = NOT1_1(A[0]);
+	printf("\nNOT A[0](%c) = C[0](%c)\n", A[0], C[0]);
+	NOT1_32(C,A);
+	printf("NOT A(%.32s) = C(%.32s)\n",A, C);
 
 	C[0] = AND2_1(A[0], B[0]);
-	C[1] = AND2_1(A[1], B[1]);
-	C[2] = AND2_1(A[2], B[2]);
-	C[3] = AND2_1(A[3], B[3]);
-	C[4] = AND2_1(A[4], B[4]);
-	C[5] = AND2_1(A[5], B[5]);
-	C[6] = AND2_1(A[6], B[6]);
-	C[7] = AND2_1(A[7], B[7]);
-	C[8] = AND2_1(A[8], B[8]);
-	C[9] = AND2_1(A[9], B[9]);
-	C[10] = AND2_1(A[10], B[10]);
-	C[11] = AND2_1(A[11], B[11]);
-	C[12] = AND2_1(A[12], B[12]);
-	C[13] = AND2_1(A[13], B[13]);
-	C[14] = AND2_1(A[14], B[14]);
-	C[15] = AND2_1(A[15], B[15]);
-	C[16] = AND2_1(A[16], B[16]);
-	C[17] = AND2_1(A[17], B[17]);
-	C[18] = AND2_1(A[18], B[18]);
-	C[19] = AND2_1(A[19], B[19]);
-	C[20] = AND2_1(A[20], B[20]);
-	C[21] = AND2_1(A[21], B[21]);
-	C[22] = AND2_1(A[22], B[22]);
-	C[23] = AND2_1(A[23], B[23]);
-	C[24] = AND2_1(A[24], B[24]);
-	C[25] = AND2_1(A[25], B[25]);
-	C[26] = AND2_1(A[26], B[26]);
-	C[27] = AND2_1(A[27], B[27]);
-	C[28] = AND2_1(A[28], B[28]);
-	C[29] = AND2_1(A[29], B[29]);
-	C[30] = AND2_1(A[30], B[30]);
-	C[31] = AND2_1(A[31], B[31]); 
-	AND2_32(F, D, E);
-  
-	printf("\nC[0-31] = AND2_1(A[0-31], B[0-31])");
-	printf("\nA(%.32s) AND B(%.32s) =  C(%.32s) \n", A, B, C);
-	printf("\nAND2_32(F,D,E)  This result should match the one above.");
-	printf("\nD(%.32s) AND E(%.32s) =  F(%.32s) \n", D, E, F);  
+	printf("\nA[0](%c) AND B[0](%c) = C[0](%c)\n", A[0], B[0],C[0]);
+	AND2_32(C, A, B);
+	printf("A(%.32s) AND B(%.32s) = C(%.32s)\n", A, B, C);
+	C[0] = AND3_1(A[0], A[1], A[2]);
+	printf("A[0](%c) AND A[1](%c) AND A[2] = C[0](%c)\n", A[0], A[1], A[2], C[0]);
+	AND3_32(C, A, B, D);
+	printf("A(%.32s) AND B(%.32s) AND D(%.32s) = C(%.32s)\n", A, B, D, C);
+	C[0] = AND4_1(A[0], B[0], D[0], E[0]);
+	printf("A[0](%c) AND B[0](%c) AND D[0](%c) AND E[0](%c) = C(%c)\n", A[0], B[0], D[0], E[0], C[0]);
+	AND4_32(C, A, B, D, E);
+	printf("A(%.32s) AND B(%.32s) AND D(%.32s) AND E(%.32s)= C(%.32s)\n", A, B, D, E, C);
+	C[0] = AND6_1(A[0], B[0], D[0], E[0], F[0], G[0]);
+	printf("A[0](%c) AND B[0](%c) AND D[0](%c) AND E[0](%c) AND F[0](%c) AND G[0](%c)= C[0](%c)\n", A[0], B[0], D[0], E[0], F[0], G[0], C[0]);
+	AND6_32(C, A, B, D, E, F, G);
+	printf("A(%.32s) AND B(%.32s) AND D(%.32s) AND E(%.32s) AND F(%.32s) AND G(%.32s)= C(%.32s)\n", A, B, D, E, F, G, C);
+	C[0] = AND8_1(A[0], B[0], D[0], E[0], F[0], G[0], H[0], I[0]);
+	printf("A[0](%c) AND B[0](%c) AND D[0](%c) AND E[0](%c) AND F[0](%c) AND G[0](%c) AND H[0](%c) AND I[0](%c)= C[0](%c)\n", A[0], B[0], D[0], E[0], F[0], G[0], H[0], I[0], C[0]);
+	AND8_32(C, A, B, D, E, F, G, H, I);
+	printf("A(%.32s) AND B(%.32s) AND D(%.32s) AND E(%.32s) AND F(%.32s) AND G(%.32s) AND H(%.32s) AND I(%.32s)= C(%.32s)\n", A, B, D, E, F, G, H, I, C);
 
-	
-	
+	C[0] = OR2_1(A[0], B[0]);
+	printf("\nA[0](%c) OR B[0](%c) = C[0](%c)\n", A[0], B[0],C[0]);
+	OR2_32(C, A, B);
+	printf("A(%.32s) OR B(%.32s) = C(%.32s)\n", A, B, C);
+	C[0] = OR3_1(A[0], A[1], A[2]);
+	printf("A[0](%c) OR A[1](%c) OR A[2] = C[0](%c)\n", A[0], A[1], A[2], C[0]);
+	OR3_32(C, A, B, D);
+	printf("A(%.32s) OR B(%.32s) OR D(%.32s) = C(%.32s)\n", A, B, D, C);
+	C[0] = OR4_1(A[0], B[0], D[0], E[0]);
+	printf("A[0](%c) OR B[0](%c) OR D[0](%c) OR E[0](%c) = C(%c)\n", A[0], B[0], D[0], E[0], C[0]);
+	OR4_32(C, A, B, D, E);
+	printf("A(%.32s) OR B(%.32s) OR D(%.32s) OR E(%.32s)= C(%.32s)\n", A, B, D, E, C);
+	C[0] = OR6_1(A[0], B[0], D[0], E[0], F[0], G[0]);
+	printf("A[0](%c) OR B[0](%c) OR D[0](%c) OR E[0](%c) OR F[0](%c) OR G[0](%c)= C[0](%c)\n", A[0], B[0], D[0], E[0], F[0], G[0], C[0]);
+	OR6_32(C, A, B, D, E, F, G);
+	printf("A(%.32s) OR B(%.32s) OR D(%.32s) OR E(%.32s) OR F(%.32s) OR G(%.32s)= C(%.32s)\n", A, B, D, E, F, G, C);
+	C[0] = OR8_1(A[0], B[0], D[0], E[0], F[0], G[0], H[0], I[0]);
+	printf("A[0](%c) OR B[0](%c) OR D[0](%c) OR E[0](%c) OR F[0](%c) OR G[0](%c) OR H[0](%c) OR I[0](%c)= C[0](%c)\n", A[0], B[0], D[0], E[0], F[0], G[0], H[0], I[0], C[0]);
+	OR8_32(C, A, B, D, E, F, G, H, I);
+	printf("A(%.32s) OR B(%.32s) OR D(%.32s) OR E(%.32s) OR F(%.32s) OR G(%.32s) OR H(%.32s) OR I(%.32s)= C(%.32s)\n", A, B, D, E, F, G, H, I, C);
+
+	C[0] = NAND2_1(A[0], B[0]);
+	printf("\nA[0](%c) NAND B[0](%c) = C[0](%c)\n", A[0], B[0],C[0]);
+	NAND2_32(C, A, B);
+	printf("A(%.32s) NAND B(%.32s) = C(%.32s)\n", A, B, C);
+	C[0] = NAND3_1(A[0], A[1], A[2]);
+	printf("A[0](%c) NAND A[1](%c) NAND A[2] = C[0](%c)\n", A[0], A[1], A[2], C[0]);
+	NAND3_32(C, A, B, D);
+	printf("A(%.32s) NAND B(%.32s) NAND D(%.32s) = C(%.32s)\n", A, B, D, C);
+	C[0] = NAND4_1(A[0], B[0], D[0], E[0]);
+	printf("A[0](%c) NAND B[0](%c) NAND D[0](%c) NAND E[0](%c) = C(%c)\n", A[0], B[0], D[0], E[0], C[0]);
+	NAND4_32(C, A, B, D, E);
+	printf("A(%.32s) NAND B(%.32s) NAND D(%.32s) NAND E(%.32s)= C(%.32s)\n", A, B, D, E, C);
+	C[0] = NAND6_1(A[0], B[0], D[0], E[0], F[0], G[0]);
+	printf("A[0](%c) NAND B[0](%c) NAND D[0](%c) NAND E[0](%c) NAND F[0](%c) NAND G[0](%c)= C[0](%c)\n", A[0], B[0], D[0], E[0], F[0], G[0], C[0]);
+	NAND6_32(C, A, B, D, E, F, G);
+	printf("A(%.32s) NAND B(%.32s) NAND D(%.32s) NAND E(%.32s) NAND F(%.32s) NAND G(%.32s)= C(%.32s)\n", A, B, D, E, F, G, C);
+	C[0] = NAND8_1(A[0], B[0], D[0], E[0], F[0], G[0], H[0], I[0]);
+	printf("A[0](%c) NAND B[0](%c) NAND D[0](%c) NAND E[0](%c) NAND F[0](%c) NAND G[0](%c) NAND H[0](%c) NAND I[0](%c)= C[0](%c)\n", A[0], B[0], D[0], E[0], F[0], G[0], H[0], I[0], C[0]);
+	NAND8_32(C, A, B, D, E, F, G, H, I);
+	printf("A(%.32s) NAND B(%.32s) NAND D(%.32s) NAND E(%.32s) NAND F(%.32s) NAND G(%.32s) NAND H(%.32s) NAND I(%.32s)= C(%.32s)\n", A, B, D, E, F, G, H, I, C);
+
+	C[0] = NOR2_1(A[0], B[0]);
+	printf("\nA[0](%c) NOR B[0](%c) = C[0](%c)\n", A[0], B[0],C[0]);
+	NOR2_32(C, A, B);
+	printf("A(%.32s) NOR B(%.32s) = C(%.32s)\n", A, B, C);
+	C[0] = NOR3_1(A[0], A[1], A[2]);
+	printf("A[0](%c) NOR A[1](%c) NOR A[2] = C[0](%c)\n", A[0], A[1], A[2], C[0]);
+	NOR3_32(C, A, B, D);
+	printf("A(%.32s) NOR B(%.32s) NOR D(%.32s) = C(%.32s)\n", A, B, D, C);
+	C[0] = NOR4_1(A[0], B[0], D[0], E[0]);
+	printf("A[0](%c) NOR B[0](%c) NOR D[0](%c) NOR E[0](%c) = C(%c)\n", A[0], B[0], D[0], E[0], C[0]);
+	NOR4_32(C, A, B, D, E);
+	printf("A(%.32s) NOR B(%.32s) NOR D(%.32s) NOR E(%.32s)= C(%.32s)\n", A, B, D, E, C);
+	C[0] = NOR6_1(A[0], B[0], D[0], E[0], F[0], G[0]);
+	printf("A[0](%c) NOR B[0](%c) NOR D[0](%c) NOR E[0](%c) NOR F[0](%c) NOR G[0](%c)= C[0](%c)\n", A[0], B[0], D[0], E[0], F[0], G[0], C[0]);
+	NOR6_32(C, A, B, D, E, F, G);
+	printf("A(%.32s) NOR B(%.32s) NOR D(%.32s) NOR E(%.32s) NOR F(%.32s) NOR G(%.32s)= C(%.32s)\n", A, B, D, E, F, G, C);
+	C[0] = NOR8_1(A[0], B[0], D[0], E[0], F[0], G[0], H[0], I[0]);
+	printf("A[0](%c) NOR B[0](%c) NOR D[0](%c) NOR E[0](%c) NOR F[0](%c) NOR G[0](%c) NOR H[0](%c) NOR I[0](%c)= C[0](%c)\n", A[0], B[0], D[0], E[0], F[0], G[0], H[0], I[0], C[0]);
+	NOR8_32(C, A, B, D, E, F, G, H, I);
+	printf("A(%.32s) NOR B(%.32s) NOR D(%.32s) NOR E(%.32s) NOR F(%.32s) NOR G(%.32s) NOR H(%.32s) NOR I(%.32s)= C(%.32s)\n", A, B, D, E, F, G, H, I, C);
+
+	C[0] = XOR2_1(A[0], B[0]);
+	printf("\nA[0](%c) XOR B[0](%c) = C[0](%c)\n", A[0], B[0],C[0]);
+	XOR2_32(C, A, B);
+	printf("A(%.32s) XOR B(%.32s) = C(%.32s)\n", A, B, C);
+	C[0] = XOR3_1(A[0], A[1], A[2]);
+	printf("A[0](%c) XOR A[1](%c) XOR A[2] = C[0](%c)\n", A[0], A[1], A[2], C[0]);
+	XOR3_32(C, A, B, D);
+	printf("A(%.32s) XOR B(%.32s) XOR D(%.32s) = C(%.32s)\n", A, B, D, C);
+	C[0] = XOR4_1(A[0], B[0], D[0], E[0]);
+	printf("A[0](%c) XOR B[0](%c) XOR D[0](%c) XOR E[0](%c) = C(%c)\n", A[0], B[0], D[0], E[0], C[0]);
+	XOR4_32(C, A, B, D, E);
+	printf("A(%.32s) XOR B(%.32s) XOR D(%.32s) XOR E(%.32s)= C(%.32s)\n", A, B, D, E, C);
+	C[0] = XOR6_1(A[0], B[0], D[0], E[0], F[0], G[0]);
+	printf("A[0](%c) XOR B[0](%c) XOR D[0](%c) XOR E[0](%c) XOR F[0](%c) XOR G[0](%c)= C[0](%c)\n", A[0], B[0], D[0], E[0], F[0], G[0], C[0]);
+	XOR6_32(C, A, B, D, E, F, G);
+	printf("A(%.32s) XOR B(%.32s) XOR D(%.32s) XOR E(%.32s) XOR F(%.32s) XOR G(%.32s)= C(%.32s)\n", A, B, D, E, F, G, C);
+	C[0] = XOR8_1(A[0], B[0], D[0], E[0], F[0], G[0], H[0], I[0]);
+	printf("A[0](%c) XOR B[0](%c) XOR D[0](%c) XOR E[0](%c) XOR F[0](%c) XOR G[0](%c) XOR H[0](%c) XOR I[0](%c)= C[0](%c)\n", A[0], B[0], D[0], E[0], F[0], G[0], H[0], I[0], C[0]);
+	XOR8_32(C, A, B, D, E, F, G, H, I);
+	printf("A(%.32s) XOR B(%.32s) XOR D(%.32s) XOR E(%.32s) XOR F(%.32s) XOR G(%.32s) XOR H(%.32s) XOR I(%.32s)= C(%.32s)\n", A, B, D, E, F, G, H, I, C);
+
+	C[0] = XNOR2_1(A[0], B[0]);
+	printf("\nA[0](%c) XNOR B[0](%c) = C[0](%c)\n", A[0], B[0],C[0]);
+	XNOR2_32(C, A, B);
+	printf("A(%.32s) XNOR B(%.32s) = C(%.32s)\n", A, B, C);
+	C[0] = XNOR3_1(A[0], A[1], A[2]);
+	printf("A[0](%c) XNOR A[1](%c) XNOR A[2] = C[0](%c)\n", A[0], A[1], A[2], C[0]);
+	XNOR3_32(C, A, B, D);
+	printf("A(%.32s) XNOR B(%.32s) XNOR D(%.32s) = C(%.32s)\n", A, B, D, C);
+	C[0] = XNOR4_1(A[0], B[0], D[0], E[0]);
+	printf("A[0](%c) XNOR B[0](%c) XNOR D[0](%c) XNOR E[0](%c) = C(%c)\n", A[0], B[0], D[0], E[0], C[0]);
+	XNOR4_32(C, A, B, D, E);
+	printf("A(%.32s) XNOR B(%.32s) XNOR D(%.32s) XNOR E(%.32s)= C(%.32s)\n", A, B, D, E, C);
+	C[0] = XNOR6_1(A[0], B[0], D[0], E[0], F[0], G[0]);
+	printf("A[0](%c) XNOR B[0](%c) XNOR D[0](%c) XNOR E[0](%c) XNOR F[0](%c) XNOR G[0](%c)= C[0](%c)\n", A[0], B[0], D[0], E[0], F[0], G[0], C[0]);
+	XNOR6_32(C, A, B, D, E, F, G);
+	printf("A(%.32s) XNOR B(%.32s) XNOR D(%.32s) XNOR E(%.32s) XNOR F(%.32s) XNOR G(%.32s)= C(%.32s)\n", A, B, D, E, F, G, C);
+	C[0] = XNOR8_1(A[0], B[0], D[0], E[0], F[0], G[0], H[0], I[0]);
+	printf("A[0](%c) XNOR B[0](%c) XNOR D[0](%c) XNOR E[0](%c) XNOR F[0](%c) XNOR G[0](%c) XNOR H[0](%c) XNOR I[0](%c)= C[0](%c)\n", A[0], B[0], D[0], E[0], F[0], G[0], H[0], I[0], C[0]);
+	XNOR8_32(C, A, B, D, E, F, G, H, I);
+	printf("A(%.32s) XNOR B(%.32s) XNOR D(%.32s) XNOR E(%.32s) XNOR F(%.32s) XNOR G(%.32s) XNOR H(%.32s) XNOR I(%.32s)= C(%.32s)\n", A, B, D, E, F, G, H, I, C);
+
 /*****************
 
 Next, add the following two-level combinatorial networks as follows, for inputs of width two bits.
