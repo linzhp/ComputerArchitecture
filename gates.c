@@ -162,13 +162,13 @@ char AND8_1(char in1, char in2, char in3, char in4, char in5, char in6, char in7
 }
 void AND8_2(char output[2], char in1[2], char in2[2], char in3[2], char in4[2], char in5[2], char in6[2], char in7[2], char in8[2]){
 	output[0] = AND8_1(in1[0], in2[0], in3[0], in4[0], in5[0], in6[0], in7[0], in8[0]);
-	output[1] = AND8_1(in1[1], in2[1], in3[1], in4[1], in5[1], in6[1], in7[1], in8[0]);
+	output[1] = AND8_1(in1[1], in2[1], in3[1], in4[1], in5[1], in6[1], in7[1], in8[1]);
 }
 void AND8_8(char output[8], char in1[8], char in2[8], char in3[8], char in4[8], char in5[8], char in6[8], char in7[8], char in8[8]){
 	AND8_2(&output[0], &in1[0], &in2[0], &in3[0], &in4[0], &in5[0], &in6[0], &in7[0], &in8[0]);
-	AND8_2(&output[2], &in1[2], &in2[2], &in3[2], &in4[2], &in5[2], &in6[2], &in7[0], &in8[0]);
-	AND8_2(&output[4], &in1[4], &in2[4], &in3[4], &in4[4], &in5[4], &in6[4], &in7[0], &in8[0]);
-	AND8_2(&output[6], &in1[6], &in2[6], &in3[6], &in4[6], &in5[6], &in6[6], &in7[0], &in8[0]);
+	AND8_2(&output[2], &in1[2], &in2[2], &in3[2], &in4[2], &in5[2], &in6[2], &in7[2], &in8[2]);
+	AND8_2(&output[4], &in1[4], &in2[4], &in3[4], &in4[4], &in5[4], &in6[4], &in7[4], &in8[4]);
+	AND8_2(&output[6], &in1[6], &in2[6], &in3[6], &in4[6], &in5[6], &in6[6], &in7[6], &in8[6]);
 }
 void AND8_16(char output[16], char in1[16], char in2[16], char in3[16], char in4[16], char in5[16], char in6[16], char in7[16], char in8[16]){
 	AND8_8(&output[0], &in1[0], &in2[0], &in3[0], &in4[0], &in5[0], &in6[0], &in7[0], &in8[0]);
@@ -294,13 +294,13 @@ char OR8_1(char in1, char in2, char in3, char in4, char in5, char in6, char in7,
 }
 void OR8_2(char output[2], char in1[2], char in2[2], char in3[2], char in4[2], char in5[2], char in6[2], char in7[2], char in8[2]){
 	output[0] = OR8_1(in1[0], in2[0], in3[0], in4[0], in5[0], in6[0], in7[0], in8[0]);
-	output[1] = OR8_1(in1[1], in2[1], in3[1], in4[1], in5[1], in6[1], in7[1], in8[0]);
+	output[1] = OR8_1(in1[1], in2[1], in3[1], in4[1], in5[1], in6[1], in7[1], in8[1]);
 }
 void OR8_8(char output[8], char in1[8], char in2[8], char in3[8], char in4[8], char in5[8], char in6[8], char in7[8], char in8[8]){
 	OR8_2(&output[0], &in1[0], &in2[0], &in3[0], &in4[0], &in5[0], &in6[0], &in7[0], &in8[0]);
-	OR8_2(&output[2], &in1[2], &in2[2], &in3[2], &in4[2], &in5[2], &in6[2], &in7[0], &in8[0]);
-	OR8_2(&output[4], &in1[4], &in2[4], &in3[4], &in4[4], &in5[4], &in6[4], &in7[0], &in8[0]);
-	OR8_2(&output[6], &in1[6], &in2[6], &in3[6], &in4[6], &in5[6], &in6[6], &in7[0], &in8[0]);
+	OR8_2(&output[2], &in1[2], &in2[2], &in3[2], &in4[2], &in5[2], &in6[2], &in7[2], &in8[2]);
+	OR8_2(&output[4], &in1[4], &in2[4], &in3[4], &in4[4], &in5[4], &in6[4], &in7[4], &in8[4]);
+	OR8_2(&output[6], &in1[6], &in2[6], &in3[6], &in4[6], &in5[6], &in6[6], &in7[6], &in8[6]);
 }
 void OR8_16(char output[16], char in1[16], char in2[16], char in3[16], char in4[16], char in5[16], char in6[16], char in7[16], char in8[16]){
 	OR8_8(&output[0], &in1[0], &in2[0], &in3[0], &in4[0], &in5[0], &in6[0], &in7[0], &in8[0]);
@@ -426,13 +426,13 @@ char NAND8_1(char in1, char in2, char in3, char in4, char in5, char in6, char in
 }
 void NAND8_2(char output[2], char in1[2], char in2[2], char in3[2], char in4[2], char in5[2], char in6[2], char in7[2], char in8[2]){
 	output[0] = NAND8_1(in1[0], in2[0], in3[0], in4[0], in5[0], in6[0], in7[0], in8[0]);
-	output[1] = NAND8_1(in1[1], in2[1], in3[1], in4[1], in5[1], in6[1], in7[1], in8[0]);
+	output[1] = NAND8_1(in1[1], in2[1], in3[1], in4[1], in5[1], in6[1], in7[1], in8[1]);
 }
 void NAND8_8(char output[8], char in1[8], char in2[8], char in3[8], char in4[8], char in5[8], char in6[8], char in7[8], char in8[8]){
 	NAND8_2(&output[0], &in1[0], &in2[0], &in3[0], &in4[0], &in5[0], &in6[0], &in7[0], &in8[0]);
-	NAND8_2(&output[2], &in1[2], &in2[2], &in3[2], &in4[2], &in5[2], &in6[2], &in7[0], &in8[0]);
-	NAND8_2(&output[4], &in1[4], &in2[4], &in3[4], &in4[4], &in5[4], &in6[4], &in7[0], &in8[0]);
-	NAND8_2(&output[6], &in1[6], &in2[6], &in3[6], &in4[6], &in5[6], &in6[6], &in7[0], &in8[0]);
+	NAND8_2(&output[2], &in1[2], &in2[2], &in3[2], &in4[2], &in5[2], &in6[2], &in7[2], &in8[2]);
+	NAND8_2(&output[4], &in1[4], &in2[4], &in3[4], &in4[4], &in5[4], &in6[4], &in7[4], &in8[4]);
+	NAND8_2(&output[6], &in1[6], &in2[6], &in3[6], &in4[6], &in5[6], &in6[6], &in7[6], &in8[6]);
 }
 void NAND8_16(char output[16], char in1[16], char in2[16], char in3[16], char in4[16], char in5[16], char in6[16], char in7[16], char in8[16]){
 	NAND8_8(&output[0], &in1[0], &in2[0], &in3[0], &in4[0], &in5[0], &in6[0], &in7[0], &in8[0]);
@@ -559,13 +559,13 @@ char NOR8_1(char in1, char in2, char in3, char in4, char in5, char in6, char in7
 }
 void NOR8_2(char output[2], char in1[2], char in2[2], char in3[2], char in4[2], char in5[2], char in6[2], char in7[2], char in8[2]){
 	output[0] = NOR8_1(in1[0], in2[0], in3[0], in4[0], in5[0], in6[0], in7[0], in8[0]);
-	output[1] = NOR8_1(in1[1], in2[1], in3[1], in4[1], in5[1], in6[1], in7[1], in8[0]);
+	output[1] = NOR8_1(in1[1], in2[1], in3[1], in4[1], in5[1], in6[1], in7[1], in8[1]);
 }
 void NOR8_8(char output[8], char in1[8], char in2[8], char in3[8], char in4[8], char in5[8], char in6[8], char in7[8], char in8[8]){
 	NOR8_2(&output[0], &in1[0], &in2[0], &in3[0], &in4[0], &in5[0], &in6[0], &in7[0], &in8[0]);
-	NOR8_2(&output[2], &in1[2], &in2[2], &in3[2], &in4[2], &in5[2], &in6[2], &in7[0], &in8[0]);
-	NOR8_2(&output[4], &in1[4], &in2[4], &in3[4], &in4[4], &in5[4], &in6[4], &in7[0], &in8[0]);
-	NOR8_2(&output[6], &in1[6], &in2[6], &in3[6], &in4[6], &in5[6], &in6[6], &in7[0], &in8[0]);
+	NOR8_2(&output[2], &in1[2], &in2[2], &in3[2], &in4[2], &in5[2], &in6[2], &in7[2], &in8[2]);
+	NOR8_2(&output[4], &in1[4], &in2[4], &in3[4], &in4[4], &in5[4], &in6[4], &in7[4], &in8[4]);
+	NOR8_2(&output[6], &in1[6], &in2[6], &in3[6], &in4[6], &in5[6], &in6[6], &in7[6], &in8[6]);
 }
 void NOR8_16(char output[16], char in1[16], char in2[16], char in3[16], char in4[16], char in5[16], char in6[16], char in7[16], char in8[16]){
 	NOR8_8(&output[0], &in1[0], &in2[0], &in3[0], &in4[0], &in5[0], &in6[0], &in7[0], &in8[0]);
@@ -602,12 +602,7 @@ void XOR2_32(char output[32], char in1[32], char in2[32]){
 	XOR2_16(&output[16], &in1[16], &in2[16]);
 }
 char XOR3_1(char in1, char in2, char in3){
-	if ((XOR2_1(in1, in2)=='0' && in3 == '1') || (XOR2_1(in1, in2)=='1' && in3 == '0')){
-		return '1';
-	}
-	else{
-		return '0';
-	}
+	return XOR2_1(XOR2_1(in1, in2), in3);
 }
 void XOR3_2(char output[2], char in1[2], char in2[2], char in3[2]){
 	output[0] = XOR3_1(in1[0], in2[0], in3[0]);
@@ -628,12 +623,7 @@ void XOR3_32(char output[32], char in1[32], char in2[32], char in3[32]){
 	XOR3_16(&output[16], &in1[16], &in2[16], &in3[16]);
 }
 char XOR4_1(char in1, char in2, char in3, char in4){
-	if ((XOR3_1(in1, in2, in3)=='0' && in4 == '1') || (XOR3_1(in1, in2, in3)=='1' && in4 == '0')){
-		return '1';
-	}
-	else{
-		return '0';
-	}
+	return XOR2_1(XOR3_1(in1, in2, in3), in4);
 }
 void XOR4_2(char output[2], char in1[2], char in2[2], char in3[2], char in4[2]){
 	output[0] = XOR4_1(in1[0], in2[0], in3[0], in4[0]);
@@ -654,12 +644,7 @@ void XOR4_32(char output[32], char in1[32], char in2[32], char in3[32], char in4
 	XOR4_16(&output[16], &in1[16], &in2[16], &in3[16], &in4[16]);
 }
 char XOR6_1(char in1, char in2, char in3, char in4, char in5, char in6){
-	if ((XOR3_1(in1, in2, in3)=='0' && XOR3_1(in4, in5, in6) == '1') || (XOR3_1(in1, in2, in3)=='1' && XOR3_1(in4, in5, in6) == '0')){
-		return '1';
-	}
-	else{
-		return '0';
-	}
+	return XOR2_1(XOR3_1(in1, in2, in3), XOR3_1(in4, in5, in6));
 }
 void XOR6_2(char output[2], char in1[2], char in2[2], char in3[2], char in4[2], char in5[2], char in6[2]){
 	output[0] = XOR6_1(in1[0], in2[0], in3[0], in4[0], in5[0], in6[0]);
@@ -680,22 +665,17 @@ void XOR6_32(char output[32], char in1[32], char in2[32], char in3[32], char in4
 	XOR6_16(&output[16], &in1[16], &in2[16], &in3[16], &in4[16], &in5[16], &in6[16]);
 }
 char XOR8_1(char in1, char in2, char in3, char in4, char in5, char in6, char in7, char in8){
-	if ((XOR4_1(in1, in2, in3, in4)=='0' && XOR4_1(in5, in6, in7, in8) == '1') || (XOR4_1(in1, in2, in3, in4)=='1' && XOR4_1(in5, in6, in7, in8) == '0')){
-		return '1';
-	}
-	else{
-		return '0';
-	}
+	return XOR2_1(XOR4_1(in1, in2, in3, in4),XOR4_1(in5, in6, in7, in8));
 }
 void XOR8_2(char output[2], char in1[2], char in2[2], char in3[2], char in4[2], char in5[2], char in6[2], char in7[2], char in8[2]){
 	output[0] = XOR8_1(in1[0], in2[0], in3[0], in4[0], in5[0], in6[0], in7[0], in8[0]);
-	output[1] = XOR8_1(in1[1], in2[1], in3[1], in4[1], in5[1], in6[1], in7[1], in8[0]);
+	output[1] = XOR8_1(in1[1], in2[1], in3[1], in4[1], in5[1], in6[1], in7[1], in8[1]);
 }
 void XOR8_8(char output[8], char in1[8], char in2[8], char in3[8], char in4[8], char in5[8], char in6[8], char in7[8], char in8[8]){
 	XOR8_2(&output[0], &in1[0], &in2[0], &in3[0], &in4[0], &in5[0], &in6[0], &in7[0], &in8[0]);
-	XOR8_2(&output[2], &in1[2], &in2[2], &in3[2], &in4[2], &in5[2], &in6[2], &in7[0], &in8[0]);
-	XOR8_2(&output[4], &in1[4], &in2[4], &in3[4], &in4[4], &in5[4], &in6[4], &in7[0], &in8[0]);
-	XOR8_2(&output[6], &in1[6], &in2[6], &in3[6], &in4[6], &in5[6], &in6[6], &in7[0], &in8[0]);
+	XOR8_2(&output[2], &in1[2], &in2[2], &in3[2], &in4[2], &in5[2], &in6[2], &in7[2], &in8[2]);
+	XOR8_2(&output[4], &in1[4], &in2[4], &in3[4], &in4[4], &in5[4], &in6[4], &in7[4], &in8[4]);
+	XOR8_2(&output[6], &in1[6], &in2[6], &in3[6], &in4[6], &in5[6], &in6[6], &in7[6], &in8[6]);
 }
 void XOR8_16(char output[16], char in1[16], char in2[16], char in3[16], char in4[16], char in5[16], char in6[16], char in7[16], char in8[16]){
 	XOR8_8(&output[0], &in1[0], &in2[0], &in3[0], &in4[0], &in5[0], &in6[0], &in7[0], &in8[0]);
@@ -731,12 +711,7 @@ void XNOR2_32(char output[32], char in1[32], char in2[32]){
 	XNOR2_16(&output[16], &in1[16], &in2[16]);
 }
 char XNOR3_1(char in1, char in2, char in3){
-	if ((XNOR2_1(in1, in2)=='0' && in3 == '1') || (XNOR2_1(in1, in2)=='1' && in3 == '0')){
-		return '0';
-	}
-	else{
-		return '1';
-	}
+	return NOT1_1(XOR3_1(in1, in2, in3));
 }
 void XNOR3_2(char output[2], char in1[2], char in2[2], char in3[2]){
 	output[0] = XNOR3_1(in1[0], in2[0], in3[0]);
@@ -757,12 +732,7 @@ void XNOR3_32(char output[32], char in1[32], char in2[32], char in3[32]){
 	XNOR3_16(&output[16], &in1[16], &in2[16], &in3[16]);
 }
 char XNOR4_1(char in1, char in2, char in3, char in4){
-	if ((XNOR3_1(in1, in2, in3)=='0' && in4 == '1') || (XNOR3_1(in1, in2, in3)=='1' && in4 == '0')){
-		return '0';
-	}
-	else{
-		return '1';
-	}
+	return NOT1_1(XOR4_1(in1, in2, in3, in4));
 }
 void XNOR4_2(char output[2], char in1[2], char in2[2], char in3[2], char in4[2]){
 	output[0] = XNOR4_1(in1[0], in2[0], in3[0], in4[0]);
@@ -783,12 +753,7 @@ void XNOR4_32(char output[32], char in1[32], char in2[32], char in3[32], char in
 	XNOR4_16(&output[16], &in1[16], &in2[16], &in3[16], &in4[16]);
 }
 char XNOR6_1(char in1, char in2, char in3, char in4, char in5, char in6){
-	if ((XNOR3_1(in1, in2, in3)=='0' && XNOR3_1(in4, in5, in6) == '1') || (XNOR3_1(in1, in2, in3)=='1' && XNOR3_1(in4, in5, in6) == '0')){
-		return '0';
-	}
-	else{
-		return '1';
-	}
+	return NOT1_1(XOR6_1(in1, in2, in3, in4, in5, in6));
 }
 void XNOR6_2(char output[2], char in1[2], char in2[2], char in3[2], char in4[2], char in5[2], char in6[2]){
 	output[0] = XNOR6_1(in1[0], in2[0], in3[0], in4[0], in5[0], in6[0]);
@@ -809,22 +774,17 @@ void XNOR6_32(char output[32], char in1[32], char in2[32], char in3[32], char in
 	XNOR6_16(&output[16], &in1[16], &in2[16], &in3[16], &in4[16], &in5[16], &in6[16]);
 }
 char XNOR8_1(char in1, char in2, char in3, char in4, char in5, char in6, char in7, char in8){
-	if ((XNOR4_1(in1, in2, in3, in4)=='0' && XNOR4_1(in5, in6, in7, in8) == '1') || (XNOR4_1(in1, in2, in3, in4)=='1' && XNOR4_1(in5, in6, in7, in8) == '0')){
-		return '0';
-	}
-	else{
-		return '1';
-	}
+	return NOT1_1(XOR8_1(in1, in2, in3, in4, in5, in6,in7, in8));
 }
 void XNOR8_2(char output[2], char in1[2], char in2[2], char in3[2], char in4[2], char in5[2], char in6[2], char in7[2], char in8[2]){
 	output[0] = XNOR8_1(in1[0], in2[0], in3[0], in4[0], in5[0], in6[0], in7[0], in8[0]);
-	output[1] = XNOR8_1(in1[1], in2[1], in3[1], in4[1], in5[1], in6[1], in7[1], in8[0]);
+	output[1] = XNOR8_1(in1[1], in2[1], in3[1], in4[1], in5[1], in6[1], in7[1], in8[1]);
 }
 void XNOR8_8(char output[8], char in1[8], char in2[8], char in3[8], char in4[8], char in5[8], char in6[8], char in7[8], char in8[8]){
 	XNOR8_2(&output[0], &in1[0], &in2[0], &in3[0], &in4[0], &in5[0], &in6[0], &in7[0], &in8[0]);
-	XNOR8_2(&output[2], &in1[2], &in2[2], &in3[2], &in4[2], &in5[2], &in6[2], &in7[0], &in8[0]);
-	XNOR8_2(&output[4], &in1[4], &in2[4], &in3[4], &in4[4], &in5[4], &in6[4], &in7[0], &in8[0]);
-	XNOR8_2(&output[6], &in1[6], &in2[6], &in3[6], &in4[6], &in5[6], &in6[6], &in7[0], &in8[0]);
+	XNOR8_2(&output[2], &in1[2], &in2[2], &in3[2], &in4[2], &in5[2], &in6[2], &in7[2], &in8[2]);
+	XNOR8_2(&output[4], &in1[4], &in2[4], &in3[4], &in4[4], &in5[4], &in6[4], &in7[4], &in8[4]);
+	XNOR8_2(&output[6], &in1[6], &in2[6], &in3[6], &in4[6], &in5[6], &in6[6], &in7[6], &in8[6]);
 }
 void XNOR8_16(char output[16], char in1[16], char in2[16], char in3[16], char in4[16], char in5[16], char in6[16], char in7[16], char in8[16]){
 	XNOR8_8(&output[0], &in1[0], &in2[0], &in3[0], &in4[0], &in5[0], &in6[0], &in7[0], &in8[0]);
