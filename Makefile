@@ -1,33 +1,38 @@
 ##################################                                             
-#                                                                                        
-#  Last update: 03-06-09       
-#                                                                                        
-#  Aimen Al-Refai 
+#  Zhongpeng Lin 
 #  Commands: 
 #  make all, make clean, make
 #                                                                                   
 ###################################                                                                      
-
+DRIVER = driver2
 C    = gcc
-OBJ  = gatedriver.o gates.o 
-LINKOBJ  = gatedriver.o gates.o 
+OBJ  = ${DRIVER}.o bwextenders.o multiplexers.o gates.o 
 
-BIN  = runGates
+BIN  = runDriver
 RM = rm -f *~
 
 .PHONY: all clean
 
-all:  runGates                                                                                
+all:  ${BIN}
+	./${BIN}                                                                       
 
 clean:
 	${RM} $(OBJ) $(BIN)
 
 $(BIN): $(OBJ)
-	$(C) $(LINKOBJ) -o "runGates"
+	$(C) $(OBJ) -o ${BIN}
 
-mygatedriver.o: gatedriver.c gates.h
+gatedriver.o: gatedriver.c gates.h
 	$(C) -c gatedriver.c
 	
-mygates.o: gates.c gates.h
+gates.o: gates.c gates.h
 	$(C) -c -ansi -Wall gates.c
 	
+${DRIVER}.o: ${DRIVER}.c bwextenders.h multiplexers.h
+	$(C) -c ${DRIVER}.c
+
+bwextenders.o: bwextenders.c bwextenders.h
+	$(C) -c -ansi -Wall bwextenders.c
+	
+multiplexers.o: multiplexers.c multiplexers.h
+	$(C) -c -ansi -Wall multiplexers.c

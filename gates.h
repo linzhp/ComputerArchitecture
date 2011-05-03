@@ -6,9 +6,6 @@
 #ifndef GATES_H
 #define GATES_H
 
-/*the BWExtend function to make an n-bit value from the one-bit value in*/
-void BWExtend1_1(char out[1], char in);
-void BWExtend1_2(char out[2], char in);
 
 
 /*not gates*/
