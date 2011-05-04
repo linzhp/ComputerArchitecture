@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "bwextenders.h"
 #include "multiplexers.h"
+#include "register_file.h"
 
 int main(void){
 	char A[32]="10101010000101111111100000111001";
@@ -45,6 +46,18 @@ int main(void){
 	printf("Expected output:%.32s\n", F);
 	mux_8_32(X, A, B, C, D, E, F, G, H, "101");
 	printf("Actual output:\t%.32s\n", X);
+
+	printf("\nTesting Register File:\n");
+	RegisterFileAccess(X, NULL, "00000", NULL, "00001", A, 1);
+	printf("Expected output:00000000000000000000000000000000\n");
+	printf("Actual output:\t%.32s\n", X);
+	char Y[32];
+	RegisterFileAccess(X, Y, "00001", "00010", "00010", B, 1);
+	printf("Expected output:%.32s\n", A);
+	printf("Actual output:\t%.32s\n", X);
+	printf("Expected output:%.32s\n", B);
+	printf("Actual output:\t%.32s\n", Y);
+
 
 	return 0;
 }

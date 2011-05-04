@@ -6,7 +6,7 @@
 ###################################                                                                      
 DRIVER = driver2
 C    = gcc
-OBJ  = ${DRIVER}.o bwextenders.o multiplexers.o gates.o 
+OBJ  = ${DRIVER}.o bwextenders.o multiplexers.o gates.o register_file.o
 
 BIN  = runDriver
 RM = rm -f *~
@@ -28,7 +28,7 @@ gatedriver.o: gatedriver.c gates.h
 gates.o: gates.c gates.h
 	$(C) -c -ansi -Wall gates.c
 	
-${DRIVER}.o: ${DRIVER}.c bwextenders.h multiplexers.h
+${DRIVER}.o: ${DRIVER}.c bwextenders.h multiplexers.h register_file.h
 	$(C) -c ${DRIVER}.c
 
 bwextenders.o: bwextenders.c bwextenders.h
@@ -36,3 +36,6 @@ bwextenders.o: bwextenders.c bwextenders.h
 	
 multiplexers.o: multiplexers.c multiplexers.h
 	$(C) -c -ansi -Wall multiplexers.c
+	
+register_file.o: register_file.c register_file.h
+	$(C) -c -ansi -Wall register_file.c
