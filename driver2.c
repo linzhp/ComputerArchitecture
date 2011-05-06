@@ -2,6 +2,7 @@
 #include "bwextenders.h"
 #include "multiplexers.h"
 #include "register_file.h"
+#include "adders.h"
 
 int main(void){
 	char A[32]="10101010000101111111100000111001";
@@ -58,6 +59,21 @@ int main(void){
 	printf("Expected output:%.32s\n", B);
 	printf("Actual output:\t%.32s\n", Y);
 
-
+	printf("\nTesting adders:\n");
+	char sum[32], cout;
+	cout = AddRCA_1(sum, '1', '0', '1');
+	printf("Expected sum: 0, carry out: 1\n");
+	printf("Actual sum: %c, carry out: %c\n", sum[0], cout);
+	cout = AddRCA_1(sum, '0', '0', '0');
+	printf("Expected sum: 0, carry out: 0\n");
+	printf("Actual sum: %c, carry out: %c\n", sum[0], cout);
+	cout = AddRCA_1(sum, '1', '0', '0');
+	printf("Expected sum: 1, carry out: 0\n");
+	printf("Actual sum: %c, carry out: %c\n", sum[0], cout);
+	cout = AddRCA_32(sum, A, B, '0');
+	printf("Expected sum:\t11101101001010000011011111000010\n");
+	printf("Actual sum:\t\t%.32s\n", sum);
+	printf("Expected carry out: 0\n");
+	printf("Actual carry out: %c\n", cout);
 	return 0;
 }
