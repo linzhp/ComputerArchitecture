@@ -1,0 +1,27 @@
+﻿Title                                                          
+Project 2 – Creating High Level Devices Part 1
+Zhongpeng Lin
+zlin5@ucsc.edu
+Date: 05/09/2011
+
+Purpose:
+Use the gates created previously to implement multiplexers, register file and adders.
+
+Materials:
+The build environment is on a UCSC unix machine using gcc for compilation. Implementation of the project is in C language. The resource materials used were the text book, Computer Organization and Design by D. Patterson and J. Hennessy The core of the project was formed by several implementations of the basic logic gates: NOT, AND, NAND, OR, NOR, XOR, and XNOR. For each of those gates (excepting NOT) there was a set of implementations for 2, 3, 4, 6, and 8 inputs (NOT gates could only take one input). For each of those sets of implementations of n inputs, there were separate implementations for each having 1, 2, 4, 8, 16, and 32 bits per input.
+
+Procedure:
+A “bit” was represented as a C char. Bussed inputs (multi-bit-inputs) were represented as an array of char's. The 1-bit width functions all return chars so in order to call functions that deal with
+ 1-bit width inputs (no matter the # of inputs) you must set a variable equal to the function	in order to save the output to a variable.
+ The 2,8,16,32 bit-width functions each take in char arrays of the output(you would like 
+to save to) and the respective number of inputs based upon function call.
+
+The test (driver2.c) executable (runDriver) tests each of the 1-bit functions, and then each of the 32-bit functions. This ends up testing the entire set of functions, as the 32 bit functions call the 16-bit functions, the 16 call the 8, the 8 call the 4, the 4 call the 2, and the 2 call the 1.
+
+Algorithms:
+Bit-wise muxes uses AND, OR and NOT gates to select output, other bit-width muxes assemble lower bit-width muxes to implement the function.
+Address-decoder of register file accumulates left-shifts of 1 to get the corresponding binary number. RegisterFileAccess checks if the write address is 0, if not, writes to the register file, otherwise writes nothing. strcpy is used for reads and writes.
+Only ripple carry adder is implemented. Bit-wise adder uses AND, OR and NOT gates to select output, other bit-width adders assemble lower bit-width muxes to implement the function.
+
+Conclusion:
+It starts to see how high level devices can be implemented by simply assembling gates. It is otherwise hard for an outsider to imagine how computers are assembled from gates.

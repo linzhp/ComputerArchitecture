@@ -1,6 +1,5 @@
 #include "register_file.h"
 #include <string.h>
-#include <stdio.h>
 
 char RegFile[32][32]={"00000000000000000000000000000000"};
 
