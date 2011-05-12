@@ -4,9 +4,9 @@
 #  make all, make clean, make
 #                                                                                   
 ###################################                                                                      
-DRIVER = driver2
+DRIVER = driver3
 C    = gcc
-OBJ  = ${DRIVER}.o bwextenders.o multiplexers.o gates.o register_file.o adders.o
+OBJ  = ${DRIVER}.o bwextenders.o multiplexers.o gates.o register_file.o adders.o shifter_signextend.o
 
 BIN  = runDriver
 RM = rm -f *~
@@ -28,7 +28,7 @@ gatedriver.o: gatedriver.c gates.h
 gates.o: gates.c gates.h
 	$(C) -c -ansi -Wall gates.c
 	
-${DRIVER}.o: ${DRIVER}.c bwextenders.h multiplexers.h register_file.h
+${DRIVER}.o: ${DRIVER}.c shifter_signextend.h
 	$(C) -c ${DRIVER}.c
 
 bwextenders.o: bwextenders.c bwextenders.h
@@ -42,3 +42,6 @@ register_file.o: register_file.c register_file.h
 
 adders.o: adders.c adders.h
 	$(C) -c -ansi -Wall adders.c
+
+shifter_signextend.o: shifter_signextend.c shifter_signextend.h
+	$(C) -c -ansi -Wall shifter_signextend.c
