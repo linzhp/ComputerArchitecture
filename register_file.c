@@ -3,7 +3,7 @@
 
 char RegFile[32][32]={"00000000000000000000000000000000"};
 
-int addr_decode(char addr[5]){
+int addr_decode_5(char addr[5]){
 	int number=0;
 	int i;
 	for(i=0; i<5; i++){
@@ -20,17 +20,17 @@ void RegisterFileAccess(char ReadOut1[32],
                         char WriteIn[32],
                         int RegWrite ){
 	if(WriteAddr !=NULL && RegWrite){
-		int index = addr_decode(WriteAddr);
+		int index = addr_decode_5(WriteAddr);
 		if(index!=0)
-			strcpy(RegFile[index], WriteIn);
+			strncpy(RegFile[index], WriteIn, 32);
 	}
 
 	if(ReadAddr1 != NULL){
-		strcpy(ReadOut1, RegFile[addr_decode(ReadAddr1)]);
+		strncpy(ReadOut1, RegFile[addr_decode_5(ReadAddr1)], 32);
 	}
 
 	if(ReadAddr2 != NULL){
-		strcpy(ReadOut2, RegFile[addr_decode(ReadAddr2)]);
+		strncpy(ReadOut2, RegFile[addr_decode_5(ReadAddr2)], 32);
 	}
 
 }
