@@ -6,7 +6,7 @@
 ###################################                                                                      
 DRIVER = driver3
 C    = gcc
-OBJ  = ${DRIVER}.o bwextenders.o multiplexers.o gates.o register_file.o adders.o shifter_signextend.o memory.o complement.o
+OBJ  = ${DRIVER}.o bwextenders.o multiplexers.o gates.o register_file.o adders.o shifter_signextend.o memory.o complement.o ALU.o
 
 BIN  = runDriver
 RM = rm -f *~
@@ -50,4 +50,8 @@ memory.o: memory.c memory.h
 	$(C) -c -ansi -Wall memory.c
 	
 complement.o: complement.c complement.h
-	$(C) -c -ansi -Wall complement.c	
+	$(C) -c -ansi -Wall complement.c
+
+ALU.o: ALU.c ALU.h
+	$(C) -c -ansi -Wall ALU.c
+	
