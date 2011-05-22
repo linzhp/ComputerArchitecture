@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "shifter_signextend.h"
 #include "memory.h"
+#include "complement.h"
 
 int main(void){
 	char A[32]="10101010000101111111100000111001";
@@ -24,5 +25,10 @@ int main(void){
 	printf("Actual output: %.32s\n", memcontents[8]);
 	MemoryAccess(X, "00000000000000000000000000001000", NULL, '0', memcontents);
 	printf("Actual output: %.32s\n", X);
+
+	printf("\nTesting complement\n");
+	complement(X, A);
+	printf("Expected output: 01010101111010000000011111000111\n");
+	printf("Actual output:\t%.32s", X);
 	return 0;
 }
