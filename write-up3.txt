@@ -1,0 +1,29 @@
+﻿Title                                                          
+Project 3 – Creating High Level Devices Part 2
+Zhongpeng Lin
+zlin5@ucsc.edu
+Date: 05/22/2011
+
+Purpose:
+Add the shifter and sign-extender, a memory/cache unit, and an arithmetic-logic unit (ALU)..
+
+Materials:
+The build environment is on a UCSC unix machine using gcc for compilation. Implementation of the project is in C language. The resource materials used were the text book, Computer Organization and Design by D. Patterson and J. Hennessy The core of the project was formed by several implementations of the basic logic gates: NOT, AND, NAND, OR, NOR, XOR, and XNOR. For each of those gates (excepting NOT) there was a set of implementations for 2, 3, 4, 6, and 8 inputs (NOT gates could only take one input). For each of those sets of implementations of n inputs, there were separate implementations for each having 1, 2, 4, 8, 16, and 32 bits per input.
+
+Procedure:
+Shifter uses strncpy to copy the insignificant 30 bits of the input to the significant 30 bits of the output, and sets insignificant 2 bits of the output to 0.
+
+Sign extender uses strncpy to copy insignificant 16 bits from input to output, and sets the significant 16 bits to be the most significant bit of the input.
+
+Memory access unit uses strncpy to copy bit strings into the two-dimensional array storage and from the storage.
+
+The new function I implemented is two's complement. It first uses NOT1_32 to negate the input and then uses the adder implemented before to add 1 (one) to the negative. The format of the instruction is:
+
+compl out, in
+
+The operation code is 011
+
+The ALU first checkout the operation code to decide which operation to perform, then calls the corresponding functions. For the sub and slt, I first did a substraction, and then if it is slt, the result is set or unset according to the sign of the outcome of substraction.
+
+Conclusion:
+It starts to see how high level devices can be implemented by simply assembling gates. It is otherwise hard for an outsider to imagine how computers are assembled from gates.

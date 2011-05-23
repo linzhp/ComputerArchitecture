@@ -1,7 +1,6 @@
 #include "shifter_signextend.h"
 #include "bwextenders.h"
 #include <string.h>
-#include <stdio.h>
 
 void shiftleft2x(char out[32], char in[32]){
 	strncpy(out, &in[2], 30);
