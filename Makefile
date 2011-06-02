@@ -4,9 +4,9 @@
 #  make all, make clean, make
 #                                                                                   
 ###################################                                                                      
-DRIVER = driver3
+DRIVER = driver4
 C    = gcc
-OBJ  = ${DRIVER}.o bwextenders.o multiplexers.o gates.o register_file.o adders.o shifter_signextend.o memory.o complement.o ALU.o
+OBJ  = ${DRIVER}.o bwextenders.o multiplexers.o gates.o register_file.o adders.o shifter_signextend.o memory.o complement.o ALU.o control.o
 
 BIN  = runDriver
 RM = rm -f *~
@@ -55,3 +55,5 @@ complement.o: complement.c complement.h
 ALU.o: ALU.c ALU.h
 	$(C) -c -ansi -Wall ALU.c
 	
+control.o: control.c control.h
+	$(C) -c -ansi -Wall control.c

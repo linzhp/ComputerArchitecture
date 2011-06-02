@@ -23,7 +23,7 @@ compl out, in
 
 The operation code is 011
 
-The ALU first checkout the operation code to decide which operation to perform, then calls the corresponding functions. For the sub and slt, I first did a substraction, and then if it is slt, the result is set or unset according to the sign of the outcome of substraction.
+The ALU first checkout the operation code to decide which operation to perform, then calls the corresponding functions. For the sub and slt, I first did a substraction, and then if it is slt, the result is set or unset according to the sign of the outcome of substraction. In the end, it searches for occurrence of '1' to decide whether the result is zero.
 
 Conclusion:
 It starts to see how high level devices can be implemented by simply assembling gates. It is otherwise hard for an outsider to imagine how computers are assembled from gates.
